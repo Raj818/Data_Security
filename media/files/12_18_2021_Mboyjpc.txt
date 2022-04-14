@@ -1,0 +1,100 @@
+
+Student Register  
+name
+phone number
+father name
+father phone 
+center
+
+batch
+  --sub course
+  --main course
+
+center transfer feature need to add 
+
+student login credential from backend
+
+#############################
+
+get coin
+via 
+ --attendance
+ --test
+ --assignment
+ --app visit
+################################
+Hats
+classes time
+#################################
+Attendance ....only one time in a day
+
+########################################
+Fee ....in installment
+ both mode online offline
+#######################################
+
+live video
+
+# center wise
+# subject wise
+# batch wise 
+
+########################################
+
+Tasks
+
+Subject
+
+  --BookLate
+    --chapter
+      --Excercise
+        --Questions
+
+
+########################################
+
+Card
+
+Test
+Task
+
+########################################
+
+Test Format
+
+integer
+multi 
+float
+fill in the blanks
+
+###################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

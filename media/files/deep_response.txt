@@ -1,0 +1,274 @@
+
+#####################  LOGIN API ######################################################
+
+https://www.bansallive.com/api/login/
+
+payload:
+
+{
+    "phone":"8938019494"
+    
+}
+***** IF USER NOT ENTERD 10 DIGIT NUMBER
+{
+  "status"	: "failed",
+  "status_code" : 401,
+  "message"     : "Please enter 10 digit mobile number"
+}
+
+*****  IF USER NOT HAVE AN ACCOUNT
+
+{
+  "status"       : "failed",
+  "status_code"  : 401,
+  "message"      : "your phone number is not registered or invalid"
+}
+
+
+*****  IF USER  HAVE AN ACCOUNT
+{
+                    
+ "status"      : "success",
+ "status_code" :  200,
+ "message"     : "otp sent to your mobile number"
+                 
+}
+
+
+############################################ END LOGIN API ##################################
+
+
+#######################################  LOGIN OTP VERIFICATION ###############
+
+https://www.bansallive.com/api/loginotp-verification/
+
+type 1 == LOGIN OTP
+
+payload:
+{
+    	"phone":"8938019494",
+   	"otp":5575,
+   	"type":1 
+}
+
+**** IF USER NOT ENTERD VALID OTP
+{
+  "status": "failed",
+  "status_code": 401,
+  "message": "Invalid otp",
+  "data": {}
+}
+
+**** IF USER  ENTERD VALID OTP
+
+{
+  "status": "success",
+  "status_code": 200,
+  "message": "OTP is verified and logged in successfully",
+  "data": {
+    "name": "wajid",
+    "role": "student",
+    "paid": false,
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ4MzkyNjM1LCJpYXQiOjE2NDA2MTY2MzUsImp0aSI6IjY2YTQ4MTZjODkzMTRiYjVhMDNkYjJhMjFiNWQ1MzlmIiwidXNlcl9pZCI6Mn0.5_1GpSwrzZWF0m-AfnjY_BsfEmhuTZSBhJKfF_di7z0"
+  }
+}
+
+
+
+######### ###
+type 2 == REGITER OTP 
+
+payload:
+
+{
+    "phone":"8938019494",
+   "otp":3147,
+   "type":2
+   
+}
+
+
+
+**** IF USER NOT ENTERD VALID OTP
+
+{
+  "status": "failed",
+  "status_code": 401,
+  "message": "Invalid otp",
+  "data": {
+    "classes": []
+  }
+}
+
+**** IF USER  ENTERD VALID OTP
+
+{
+  "status": "success",
+  "status_code": 200,
+  "message": "OTP is verified",
+  "data": {
+    "classes": [
+      {
+        "id": 1,
+        "class_name": "V",
+        "stream": [
+          {
+            "id": 3,
+            "stream_name": "Neev"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "class_name": "VI",
+        "stream": [
+          {
+            "id": 3,
+            "stream_name": "Neev"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "class_name": "VII",
+        "stream": [
+          {
+            "id": 3,
+            "stream_name": "Neev"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "class_name": "VIII",
+        "stream": [
+          {
+            "id": 3,
+            "stream_name": "Neev"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "class_name": "IX",
+        "stream": [
+          {
+            "id": 3,
+            "stream_name": "Neev"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "class_name": "X",
+        "stream": [
+          {
+            "id": 3,
+            "stream_name": "Neev"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "class_name": "XI",
+        "stream": [
+          {
+            "id": 1,
+            "stream_name": "Engineering"
+          },
+          {
+            "id": 2,
+            "stream_name": "Medical"
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "class_name": "XII",
+        "stream": [
+          {
+            "id": 1,
+            "stream_name": "Engineering"
+          },
+          {
+            "id": 2,
+            "stream_name": "Medical"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+
+
+
+######################################### FIRST REGISTER ########################
+
+
+https://www.bansallive.com/api/register/
+
+payload:
+
+{
+    "phone":"8938019494",
+    "role":"student"   
+}
+
+#### SUCCESS
+{
+  "status": "success",
+  "status_code": 200,
+  "message": "OTP sent successfully to your mobile number",
+  "data": {
+    "phone": "9756073968"
+  }
+}
+### FAILED
+{
+  "status": "failed",
+  "status_code": 401,
+  "message": "Please enter 10 digit mobile number",
+  "data": {}
+}
+###############################################################################################
+##############################  COMPLETE REGISTER #############################################
+
+https://www.bansallive.com/api/complete-register/
+
+type ==1 student
+type === 2 teacher 
+
+
+payload:
+{
+    "phone":"8938019494",
+    "student_name":"wajid",
+    "email":"malik@gmail.com",
+    "class_name":1,
+    "stream":1,
+    "type":"student"
+}
+
+
+##### SUCCESS
+
+{
+  "status": "success",
+  "status_code": 200,
+  "message": "You are registerd successfully",
+  "data": {
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ4NDQ1NTA5LCJpYXQiOjE2NDA2Njk1MDksImp0aSI6ImNiNjhiMmRhMjkxZjQ5ZTA4OWY0ZmNiNDQxZDI0MzdkIiwidXNlcl9pZCI6N30.R1c2iilu9bjGviugZwr6IbB4d8WbGkso2p8i2W7EEFc"
+  }
+}
+
+######### FAILED
+
+
+{
+  "status": "failed",
+  "status_code": 401,
+  "message": "Registration failed",
+  "data": {},
+  
+}
